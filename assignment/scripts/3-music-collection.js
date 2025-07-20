@@ -12,8 +12,8 @@ collection.push(album);
 return album;
 
 }
-console.log(addToCollection(myCollection, "Waka Waka","Shakira", "2010"))
-console.log(addToCollection(myCollection, "jeje","Diamond", "2024"))
+console.log(addToCollection(myCollection, "Waka Waka","shakira", "2010"))
+console.log(addToCollection(myCollection, "jeje","diamond", "2024"))
 console.log(addToCollection(myCollection, "No Woman, No Cry", "Bob Marley", 1974))
 console.log(addToCollection(myCollection,"Jeje", "Diamond Platnumz", 2020))
 console.log(addToCollection(myCollection, "Always On Time", "Ja Rule", 2001))
@@ -26,15 +26,32 @@ function showCollection(collection){
 }
 
 }
-showCollection(myCollection)
+ showCollection(myCollection)
+
+
 /*
- Create a function named `showCollection`. This function should:
-  - Take in a `collection` parameter. (This allows it to be reused to show any array of album objects.)
-  - Loop through the `collection` and `console.log` each album's information formatted **within a single string**, like: `TITLE by ARTIST, published in YEAR`.
+ Add a function named `findByArtist`. This function should:
+  - Take in a `collection` parameter. Remember, we want to be able to search any collection!
+  - Take in an `artist` (string) parameter.
+  - Create an empty array to hold any matching results, if any.
+  - Loop through the `collection` and add any album objects with a matching artist to the array.
+  - Return the array with the matching results. (If no results are found, an empty array should be returned.)
 
-- Test the `showCollection` function.
+- Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are returned.
 */
+function findByArtist(collection, artist){
+  let matchingResults = [];
+  for(let i = 0; i < collection.length; i++){
+    if(collection[i].artist.toLowerCase() === artist.toLowerCase()){
+      matchingResults.push(collection[i])
+      
+    }
 
+  }
+  return(matchingResults)
+}
+findByArtist(myCollection, "shakira" )
+findByArtist(myCollection,)
 
 
 
