@@ -3,16 +3,39 @@ console.log('***** Music Collection *****')
 let myCollection = [];
 
 function addToCollection( collection ,title, artist, yearPublished){
-let record = {
+let album = {
   title: title,
   artist: artist,
   yearPublished : yearPublished,
 }
-collection.push(record);
-return record;
+collection.push(album);
+return album;
 
 }
-addToCollection("Things Fall Apart","Chinua-Achebe", "1958")
+console.log(addToCollection(myCollection, "Waka Waka","Shakira", "2010"))
+console.log(addToCollection(myCollection, "jeje","Diamond", "2024"))
+console.log(addToCollection(myCollection, "No Woman, No Cry", "Bob Marley", 1974))
+console.log(addToCollection(myCollection,"Jeje", "Diamond Platnumz", 2020))
+console.log(addToCollection(myCollection, "Always On Time", "Ja Rule", 2001))
+console.log(addToCollection(myCollection,"See You Again", "Wiz Khalifa", 2015))
+
+function showCollection(collection){
+  for(let i=0; i<collection.length; i++){
+    let albumInfo =collection[i];
+    console.log(`title: ${albumInfo.title} name:${albumInfo.artist} year published ${albumInfo.yearPublished} `)
+}
+
+}
+showCollection(myCollection)
+/*
+ Create a function named `showCollection`. This function should:
+  - Take in a `collection` parameter. (This allows it to be reused to show any array of album objects.)
+  - Loop through the `collection` and `console.log` each album's information formatted **within a single string**, like: `TITLE by ARTIST, published in YEAR`.
+
+- Test the `showCollection` function.
+*/
+
+
 
 
 
